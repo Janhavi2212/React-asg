@@ -25,13 +25,13 @@ const [weatherData,setWeatherdata]=useState({})
              <button type='submit' onClick={handleClick}>Search</button>
         </div>
 
-        <div className='weatherData'>
+        {weatherData.name?<div className='weatherData'>
             <h2>{weatherData.name}</h2>
             <p>Condition: {weatherData.weather[0]?.description}</p>
             <p>Temperature: {weatherData.main?.temp}°C</p>
             <p>Humidity: {weatherData.main?.humidity}%</p>
             <p>Wind Speed: {weatherData.wind?.speed} m/s</p>
-        </div>
+        </div>:<p>Loading...</p>}      
     </div>
   )
 }
